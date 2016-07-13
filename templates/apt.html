@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>Listing Information</h3>
+
+<div class="btn-group">
+  <a href="/{{apt.hashid}}/editinfo" class="btn btn-primary btn-sm">
+    <i class="glyphicon glyphicon-edit"></i>
+    Edit Listing
+  </a>
+  <a href="/{{apt.hashid}}/delete" class="btn btn-danger btn-sm">
+    <i class="glyphicon glyphicon-trash"></i>
+    Delete Listing
+  </a>
+
+</div>
+
+<div class="media">
+  <!-- {# [START book_image] #}
+  <div class="media-left">
+    {% if book.imageUrl %}
+      <img class="book-image" src="{{book.imageUrl}}">
+    {% else %}
+      <img class="book-image" src="http://placekitten.com/g/128/192">
+    {% endif %}
+  </div>
+  {# [END book_image] #} -->
+  <div class="media-body">
+   <p>{{apt.created_at}}</p>
+   <p>{{apt.hashid}}</p>
+    <h4 class="book-title">
+      {{apt.title}}
+    </h4>
+    <p>Neighborhood: <b>{{apt.neighborhood}}</b></p>
+    <p>Type: <b>{{apt.listing_type_text}}</b></p>
+    <!-- <p>{{book.href}}</p> -->
+    <p>Section: <b>{{apt.section}}</b></p>
+    <p>beds: <b>{{apt.bedroom}}</b></p>
+    <p>Price: $<b>{{apt.price}}</b></p>
+    <p>Broker Probability: <b>{{apt.broker}}</b></p>
+    <p>Contact Name: <b>{{apt.name}}</b></p>
+    <p>Contact Email : <b>{{apt.email}}</b></p>
+
+    <a href={{apt.linkurl}}>Original link</a> 
+
+    <p id='duplicates'> Duplicates: {{ duplicates|length }} </p>
+    {% for d in duplicates %}
+      <p>{{d.created_at}}: <a href={{baseurlo}}/{{d.hashid}}>{{d.title}}</a>, {{d.hashid}}</p>
+   {% endfor %}
+
+</div>
+</div>
+
+{% if not apt.isscam %}
+<div class="btn-group">
+  <a href="/{{apt.hashid}}/setscam" class="btn btn-primary btn-sm;width:200px">
+    Is it Scam? 
+  </a>
+
+   {% else %}
+   <a href="/{{apt.hashid}}/setscam" class="btn btn-danger btn-sm;width:200px">
+    Not Scam?
+  </a>
+  {% endif %}
+  {% if not apt.isbroker %}
+  <a href="/{{apt.hashid}}/setbroker" class="btn btn-primary btn-sm;width:200px">
+    Is it Broker?
+  </a>
+  {% else %}
+  <a href="/{{apt.hashid}}/setbroker" class="btn btn-danger btn-sm;width:200px">
+    Not Broker?
+  </a>
+  {% endif %}
+  {% if not apt.isemailsent %}
+  <a href="/{{apt.hashid}}/setemailsent" class="btn btn-primary btn-sm;width:200px">
+    Sent Email?
+  </a>
+  {% else %}
+  <a href="/{{apt.hashid}}/setemailsent" class="btn btn-success btn-sm;width:200px">
+    Undo Email?
+  </a>
+  {% endif %}
+  
+</div>
+
+<!-- <script type="text/javascript"> document.getElementById("duplicates").innerHTML = {{duplicates}}.length </script>
+ -->{% endblock %}
+

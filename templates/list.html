@@ -1,0 +1,114 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>CL Listings</h3>
+<style>
+ table tr.even{
+     background: #fff;
+ }
+
+ table tr.odd{
+     background: #eeeeee;
+ }
+
+ table tr.header{
+     background: #b8d1f3;
+ }
+</style>
+
+<p>{{message}}</p>
+<div class="pagination">
+    <span class="step-links">
+        {% if apts.has_previous %}
+  <a href="?page={{ apts.previous_page_number }}">previous</a>
+  {% endif %}
+    
+  <span class="current">
+      Page {{ apts.number }} of {{ apts.paginator.num_pages }}.
+  </span>
+    
+  {% if apts.has_next %}
+  <a href="?page={{ apts.next_page_number }}">next</a>
+  {% endif %}
+    </span>
+</div>
+
+<table style="width:100%">
+    <tr class="header">
+        <td> Date & Time </td>
+        <td> ID </td>
+        <td> Price ($) </td>
+        <td> Beds </td>
+        <td> Source </td>
+        <td> Dup. ID</td>
+        <td> Neighborhood </td>
+  <td>Scam? </td>
+  <td>Broker?</td>
+  <td>E-Sent?</td>
+        <td> Info & Edit </td>
+    </tr>
+
+    {% for apt in apts %}
+    <tr class="{% cycle 'even' 'odd' %}">
+        <td> {{apt.created_at}} </td>
+        <td> {{apt.hashid}} </td>
+        <td> {{apt.price}} </td>
+        <td> {{apt.bedroom}} </td>
+        <td> <a href={{apt.linkurl}}>{{apt.source}}</a> </td>
+        <td> {{apt.duplicategroupid}} </td>
+        <td> {{apt.neighborhood}} </td>
+        <td> 
+      {% if not apt.isscam %}
+      <div class="btn-group">
+    <a href="/{{apt.hashid}}/setscam2" class="btn btn-primary btn-sm"></a>
+
+    {% else %}
+    <a href="/{{apt.hashid}}/setscam2" class="btn btn-danger btn-sm"></a>
+    {% endif %} 
+  </td>
+  <td>
+      {% if not apt.isbroker %}
+      <a href="/{{apt.hashid}}/setbroker2" class="btn btn-primary btn-sm"></a>
+      {% else %}
+      <a href="/{{apt.hashid}}/setbroker2" class="btn btn-danger btn-sm"></a>
+      {% endif %}
+  </td>
+  <td>
+      {% if not apt.isemailsent %}
+      <a href="/{{apt.hashid}}/setemailsent2" class="btn btn-primary btn-sm"></a>
+      {% else %}
+      <a href="/{{apt.hashid}}/setemailsent2" class="btn btn-success btn-sm"></a>
+      {% endif %}
+    
+      </div>
+  </td>
+  <td> <a href="{{apt.image_url}}">Image</a> </td>
+  
+    </tr>
+    {% endfor %}
+</table>
+
+<a href="/updateneighbors" class="btn btn-success btn-sm">
+    <i class="glyphicon glyphicon-plus"></i>
+    Update Neighbors
+</a>
+
+<a href="/sendrequesttoanni" class="btn btn-success btn-sm">
+    <i class="glyphicon glyphicon-plus"></i>
+    Send Anni
+</a>
+
+
+<!-- <a href="/update" class="btn btn-success btn-sm">
+    <i class="glyphicon glyphicon-plus"></i>
+    Update DataBase
+</a>
+<a href="/updatedup" class="btn btn-success btn-sm">
+    <i class="glyphicon glyphicon-plus"></i>
+    Update Duplicates
+</a> -->
+
+
+{% endblock %}
