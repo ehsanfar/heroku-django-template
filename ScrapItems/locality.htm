@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>locality.nyc - exploring the neighborhoods of New York City</title>
+    <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBhmjsRow4-pvZUzsPdYtoS6hyGAu-HqfI&amp;v=3.exp&amp;sensor=true'></script>
+    <script src='application.js'></script>
+    <script src='data.js'></script>
+    <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+    <link href='application.css' rel='stylesheet' type='text/css'>
+    <link href='favicon.ico' rel='shortcut icon' sizes='16x16 32x32 96x96'>
+    <link href='images/icons/apple-icon-57x57.png' rel='apple-touch-icon' sizes='57x57'>
+    <link href='images/icons/apple-icon-precomposed.png' rel='apple-touch-icon-,precomposed' sizes='57x57'>
+    <link href='images/icons/apple-icon-72x72.png' rel='apple-touch-icon' sizes='72x72'>
+    <link href='images/icons/apple-icon-114x114.png' rel='apple-touch-icon' sizes='114x114'>
+    <link href='images/icons/apple-icon-120x120.png' rel='apple-touch-icon' sizes='120x120'>
+    <link href='images/icons/apple-icon-144x144.png' rel='apple-touch-icon' sizes='144x144'>
+    <link href='images/icons/apple-icon-152x152.png' rel='apple-touch-icon' sizes='152x152'>
+    <meta content='yes' name='apple-mobile-web-app-capable'>
+    <meta content='black-translucent' name='apple-mobile-web-app-status-bar-style'>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport'>
+    <meta content='Exploring the neighborhoods of New York City.' name='description'>
+    <meta content='app-id=1015732590' name='apple-itunes-app'>
+    <!-- %meta{property: "al:android:url", content: "localitynyc://"} -->
+    <!-- %meta{property: "al:android:package", content: "com.musikanimal.locality.nyc"} -->
+    <!-- %meta{property: "al:android:app_name", content: "locality.nyc"} -->
+    <!-- %meta{property: "og:title", content: "locality.nyc"} -->
+    <!-- %meta{property: "og:type", content: "website"} -->
+  </head>
+  <body itemscope itemtype='http://schema.org/Map'>
+    <nav>
+      <header>
+        <h1 itemprop='name'>locality.nyc</h1>
+        <div class='site-description' itemprop='description'>Exploring the neighborhoods of New York City</div>
+        <div class='site-keywords' itemprop='keywords'>new york city map nyc neighborhoods boundaries manhattan brooklyn queens the bronx staten island nyc neighborhoods map</div>
+        <div id='offline_notice'>You Are Offline</div>
+      </header>
+      <form id='find_address'>
+        <div class='search-wrapper'>
+          <input autocomplete='off' id='address' list='neighborhood_select' placeholder='Address, neighborhood, landmark...' required>
+          <ul id='polyfill_select'></ul>
+        </div>
+        <datalist id='neighborhood_select'></datalist>
+        <a href='javascript:' id='reset_address'>&#10005;</a>
+        <button></button>
+      </form>
+      <div class='neighborhood-selector'>
+        <span class='borough-select push-state' data-url='manhattan' itemprop='keywords'>Manhattan</span>
+        <span class='borough-select push-state' data-url='brooklyn' itemprop='keywords'>Brooklyn</span>
+        <span class='borough-select push-state' data-url='queens' itemprop='keywords'>Queens</span>
+        <span class='borough-select push-state' data-url='bronx' itemprop='keywords'>The Bronx</span>
+        <span class='borough-select' data-url='staten_island' itemprop='keywords'>Staten Island</span>
+      </div>
+    </nav>
+    <section id='info'></section>
+    <section id='social'>
+      <a class='app-store' href='https://itunes.apple.com/us/app/locality.nyc/id1015732590?ls=1&amp;mt=8' target='_blank'></a>
+      <a class='play-store' href='https://play.google.com/store/apps/details?id=com.musikanimal.locality.nyc' target='_blank'></a>
+    </section>
+    <section id='controls'>
+      <div class='map-controls'>
+        <div id='show_hide_zones'>
+          <img src='images/layers.png'>
+        </div>
+        <div id='mylocation'>
+          <img src='images/mylocation.png'>
+        </div>
+        <div>
+          <div id='zoom_in'>
+            <img src='images/plus.png'>
+          </div>
+          <div id='zoom_out'>
+            <img src='images/minus.png'>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class='style-selectors'>
+      <span class='variation-btn' data-variation='pale_dawn'>Pale Dawn</span>
+      <span class='variation-btn' data-variation='greyscale'>Greyscale</span>
+      <span class='variation-btn' data-variation='old_map'>Old map</span>
+      <span class='variation-btn' data-variation='retro'>Retro</span>
+      <span class='variation-btn' data-variation='default'>Normal</span>
+    </section>
+    <footer itemscope itemtype='http://schema.org/WPFooter' role='contentinfo'>
+      Copyright &copy; 2014-2016 MusikAnimal
+      &middot;
+      <a href='mailto:musikanimal@gmail.com?subject=locality.nyc'>Feedback</a>
+    </footer>
+    <footer class='mobile-footer'>
+      &copy; MusikAnimal
+      &middot;
+      <a href='mailto:musikanimal@gmail.com?subject=locality.nyc'>Feedback</a>
+    </footer>
+    <main>
+      <div id='canvas'></div>
+    </main>
+    <script>
+      try {
+        var head = document.getElementsByTagName('head')[0];
+        var script = document.createElement('script');
+        script.src = 'cordova.js';
+        head.appendChild(script);
+
+        app.initialize();
+        script.src = 'init.js';
+        head.appendChild(script);
+
+        $("body").on("click", "a", function(e) {
+          var href = $(this).attr("href");
+
+          if(href.match(/^http/) || mobileCheck()) {
+            window.open(href, "_system");
+            e.preventDefault();
+            return false;
+          }
+        });
+      } catch(e) {
+        $.noop();
+      }
+    </script>
+  </body>
+</html>

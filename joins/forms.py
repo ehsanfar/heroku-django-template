@@ -1,10 +1,12 @@
 from django import forms
 
-from .models import Join
+from .models import Join, Neighborhood, Userhist
 
 # class EmailForm(forms.Form):
 # 	name = forms.CharField(required=False)
 # 	email = forms.EmailField()
+
+
 
 class AptForm(forms.Form):
 	listing_type_text = forms.CharField(max_length = 10, required = False)
@@ -28,6 +30,4 @@ class SearchForm(forms.Form):
 class JoinForm(forms.ModelForm):
 	class Meta:
 		model = Join
-		fields = ["listing_type_text", "email", "neighborhood", "price", "bedroom", "bathroom"]
-
-
+		fields = ["listing_type_text", "email", "neighborhood", "price", "bedrooms", "bathrooms"]

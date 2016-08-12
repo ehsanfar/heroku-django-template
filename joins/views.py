@@ -2,9 +2,27 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import os
 # from .scr2db
-from .models import Join, Neighborhood
+from django.http import JsonResponse, HttpResponse #Sends back JSON response, might be useful
+from django.views.decorators.csrf import csrf_exempt #Stops the Refferrer error for https, another work around would be to go to the config files and manually entering it there
+import json #For JSON
+
+from .models import Join, Neighborhood, Userhist
 from .forms import JoinForm, AptForm, SearchForm
 import codes
+import scodes
+
+#temporary for debugging
+from inspect import currentframe, getframeinfo
+
+from rq import Queue
+from worker import conn
+from worker import checkRedis
+
+
+q = Queue(connection=conn)
+
+
+SORTATT = '-created_at'
 
 # Create your views here.
 def get_ip(request):
@@ -47,10 +65,15 @@ def share(request, ref_id):
 	except:
 		raise Http404
 
-def renderdb(request, message=''): 
-	apt_list = Join.objects.all()
-	apt_list = apt_list.order_by('-created_at')
-	paginator = Paginator(apt_list, 50)
+def renderdb(request, apt_list = None, template = 'list.html'): 
+	global SORTATT
+	if not apt_list:
+		apt_list = Join.objects.all()
+
+	order_by = request.GET.get('order_by',SORTATT)
+	SORTATT = order_by
+	apt_list = apt_list.order_by(order_by)
+	paginator = Paginator(apt_list, 100)
 
 	page = request.GET.get('page')
 	try:
@@ -60,12 +83,32 @@ def renderdb(request, message=''):
 	except EmptyPage:
 	    apts = paginator.page(paginator.num_pages)
 	# context = {"form":form}
-	context  = {'apts' : apts, 'message': message}
-	template = "list.html"
+	context  = {'apts' : apts}
+	template = template 
 	return render(request, template, context)
 
+def renderresults(request, hashlist = [], message='No message yet!'): 
+	apt_list = []
+	# objs = Join.objects.all()
+	hashlist = hashlist if hashlist else []
+	for h in hashlist: 
+		print "Hashcode:", h
+		a = Join.objects.get(hashid = h)
+		apt_list.append(a)
+
+	# context = {"form":form}
+	print "The listing is: ", apt_list
+	# context  = {'apts' : apt_list, 'message': message}
+	context  = {'apts' : apt_list, 'message': message}
+	template = 'results.html' 
+	print 'The template is:', template
+	return render(request, template, context)
+	# return redirect('/')
+
+
+
 def updatedb(request):
-  	print "The function is called"
+  	# print "The function is called"
   	# status, difftime = codes.cl2db()
   	codes.url2db()
 	if status==1:
@@ -147,7 +190,7 @@ def list(request):
 	# print form , type(form)
 	if form.is_valid():
 		new_join = form.save(commit=False)
-		print new_join
+		# print new_join
 		new_join.save()
 		
 		#print all "friends" that joined as a result of main sharer email
@@ -165,7 +208,7 @@ def editinfo(request, page_id):
 	# if request.method == 'POST':
 	if form.is_valid():
 		data = form.cleaned_data#. to_dict(flat=True)
-		print data
+		# print data
 		# image_url = upload_image_file(request.files.get('image'))
 		# if image_url:
 		#     data['imageUrl'] = image_url
@@ -174,38 +217,177 @@ def editinfo(request, page_id):
 
 	return render(request, "form.html", {'apt': aptinfo})
 
+@csrf_exempt #For the https:// problem, this is mainly for receiving JSON from Node.js or an outside server
 def search(request):
-	form = SearchForm(request.POST or None)
-	aptinfo = Join.objects.first()
-	# if request.method == 'POST':
-	if form.is_valid():
-		data = form.cleaned_data#. to_dict(flat=True)
-		if not data["neighborhood"]:
-			data["neighborhood"]='nyc'
-		if not data["minprice"]: 
-			data["minprice"] = 0
-		if not data["maxprice"]:
-			data["maxprice"]= 20000
-		if not data["bedroom"]:
-			data["bedroom"]=1
-		if not data["bathroom"]:
-			data["bathroom"]=1
+	requestObj = ''
+	print "Search Received"
+	try:
+		requestObj = request.body.decode('utf-8')
+		data = json.loads(requestObj) #Prints the data received
+		print "The data is: ", data
+		#print "JSON received"
+		print "Json Received and the tag is:", data["tag"]
 
-		print data
+		if "tag" not in data: 
+			# data["tag"] = "search" 
+			print 'No TAG'
+			redirect('/')
 
-		urls = codes.create_url(data["neighborhood"], data["minprice"], data["maxprice"], data["bedroom"], data["bathroom"])
-		render(request, "search.html", {'apt':data, 'urls': urls})
+		elif  data["tag"]!='find' and (("userid" in data) or (data['tag'] == 'listing')): 
+			print "This is for none search: ", data, getframeinfo(currentframe()).lineno
+			codes.saveuserdata(data)
+
+		elif data["tag"] == 'match_address': 
+			codes.saveuserdata(data)
+			return redirect('/')
+
+		elif data["tag"] =='response':
+			return redirect('/')
+
+		if data["tag"] not in ['search', 'find']:
+			# print "line:", getframeinfo(currentframe()).lineno
+			JsonResponse({'message':"The database is updated"})
+			return redirect('/')
+
+		elif data["tag"]=='find': 
+			print "Doesn't belong here"
+			return redirect('/find/')
+
+			# return redirect('/fresults/')
+
+
+
+		else: 
+			if "neighborhood" not in data:
+				data["neighborhood"]='nyc'
+			if "minprice" not in data: 
+				data["minprice"] = 0
+			if "maxprice" not in data:
+				data["maxprice"]= 20000     
+			if "bedrooms" not in data:
+				data["bedrooms"]='1'
+			if "bathrooms" not in data:
+				data["bathrooms"]=None
+
+                        strsearchhashid = str(codes.calsearchhashid(data))
+                        #addedhashlist = []
+                        #print strsearchhashid
+            
+                        if not checkRedis(strsearchhashid):
+                                addedhashlist, N = q.enqueue(codes.create_url, data["neighborhood"], data["minprice"], data["maxprice"], data["bedrooms"], data["bathrooms"]) 
+                        else: print '%s is already searched before' % strsearchhashid
+                        #addedhashlist, N=codes.create_url(data["neighborhood"], data["minprice"], data["maxprice"], data["bedrooms"], data["bathrooms"])
+			
+			# print "The new hashid lists and the total number of results are: ", getframeinfo(currentframe()).lineno, addedhashlist, N
+                        returnhashlist = codes.findlisting(data)
+                        resdict = {}
+                        for i in range(len(returnhashlist)):
+                                resdict[i] = returnhashlist[i]
+
+                        print resdict
+                        return JsonResponse(resdict) #Debug, something else can be sent as JSON
+                        return redirect('/')
+
+	except ValueError:
+		# print(reqest.body, request.GET, request.POST)
+		print requestObj
+		print 'no JSON' #No JSON received
+		return redirect('/')
+
+	# form = SearchForm(request.POST or None)
+	# aptinfo = Join.objects.first()
+	# # if request.method == 'POST':
+	# if form.is_valid():
+	# 	data = form.cleaned_data#. to_dict(flat=True)
+	# 	if "neighborhood" not in data:
+	# 		data["neighborhood"]='nyc'
+	# 	if "minprice" not in data: 
+	# 		data["minprice"] = 0
+	# 	if "maxprice" not in data:
+	# 		data["maxprice"]= 20000
+	# 	if "bedroom" not in data:
+	# 		data["bedroom"]='1'
+	# 	if "bathroom" not in data:
+	# 		data["bathroom"]=1
+
+	# 	print "This is the form data after edit: ", getframeinfo(currentframe()).filename, getframeinfo(currentframe()).lineno, data
+	# 	items = codes.create_url(data["neighborhood"], data["minprice"], data["maxprice"], data["bedroom"], data["bathroom"])
+	# 	# hashidlist, N = codes.create_url(data["neighborhood"], data["minprice"], data["maxprice"], data["bedroom"], data["bathroom"])
+	# 	return render(request, "search.html")
 
 	return render(request, "search.html")
 
 def updateneighbors(request):
-	codes.updateneighbors()
+	# codes.updateneighbors(
+	# codes.updateneighbcoordinates()
+	# codes.makeListofSamePArea()
+	# codes.updatejoinery()
+	scodes.updateaddresscoordinates()
 	return redirect('/')
 
+def updatehashids(request):
+	codes.updatehashids()
+	return redirect('/')
 
 def sendrequesttoanni(request):
-  	codes.sendrequesttoanni()
+	tag = request.GET.get('tag', 'search')
+	if tag == 'listing': 
+		codes.updatejoinery()
+	elif tag == 'find': 
+		data = codes.sendrequesttoanni(tag)
+		hashlist = codes.findranklisting(data)
+		# hashlist = [200000131]
+		print "The found listings: ", hashlist
+		message = json.dumps(data)
+
+		print "The message:", message
+		return renderresults(request, hashlist = hashlist, message = message)
+
+	else:
+	  	codes.sendrequesttoanni(tag)
 	return redirect('/')
+
+
+def sort_view(request):
+    form = SortForm()
+    return render_response(request, 'list.html',{'form': form})
+
+
+def updateshortneighborhoodid(request):
+	codes.updateShortNHash()
+	return redirect('/')
+
+def updateparentneighborhood(request):
+	codes.updateparentneighborhood()
+	return redirect('/')
+
+@csrf_exempt #For the https:// problem, this is mainly for receiving JSON from Node.js or an outside server
+def find(request):
+	requestObj = ''
+	print "Find REceived"
+	try:
+		requestObj = request.body.decode('utf-8')
+		data = json.loads(requestObj) #Prints the data received
+		print "The data is: ", data
+		hashlist = codes.findranklisting(data)
+		# hashlist = [200000131]
+		print "The found listings: ", hashlist
+		message = json.dumps(data)
+
+		print "The message:", message
+		return renderresults(request, hashlist = hashlist, message = message)
+
+	except ValueError:
+		# print(reqest.body, request.GET, request.POST)
+		print "The request object is:", requestObj
+		print 'no JSON' #No JSON received
+		hashlist = []
+		message = 'No message!'
+		return renderresults(request, hashlist, '')
+
+	# return renderresults(request, hashlist = hashlist, message = message)
+
+	
 
 # def editinfo(request, page_id): 
 # 	form = JoinForm(request.POST or None)

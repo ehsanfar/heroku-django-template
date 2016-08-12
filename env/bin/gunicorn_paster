@@ -1,4 +1,4 @@
-#!/Users/aehsanfar/Documents/SUMMER/Heroku/heroku-django-template/3rdPartyListings/env/bin/python
+#!/Users/aehsanfar/Documents/SUMMER/Heroku/3rdPartyListing_LOCAL/env/bin/python
 
 # -*- coding: utf-8 -*-
 import re

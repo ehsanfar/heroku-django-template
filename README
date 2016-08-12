@@ -1,0 +1,32 @@
+README 
+
+
+The types of request: 
+1. Search Request: to search and update the database regarding a search 
+	example : {'neighborhood': u'South Jamaica', 'maxprice': 3568, 'userid': 1, 'tag': u'search', 'bedroom': '3', 'minprice': 1378}
+	tag: 'search'
+	userid: is the facebook unique userid
+
+2. Alert criteria request: to request an alert request for a user 
+	example: {"neighborhood":"Boerum Hill","maxprice":4475,"userid":0,"tag":"alertrequest","bedroom":"1","minprice":1035}
+	tag: 'alertrequest'
+
+3. Alert ids (the ids of the pages that are already alerted to the user)
+	example: {'userid': 0, 'tag': 'alert', 'alertids': 42062129}
+	tag: 'alert'
+	content: 'alertids' (integer or a list of integers)
+
+4. Seen ids (the ids of the pages that are saved by the user)
+	example: 
+	tag: 'seen'
+	content: 'seenids'
+
+5. Save ids (the ids of the pages that are seen by the user)
+	example: {'userid': 1, 'tag': 'save', 'saveids': [41162425, 52070841]}
+
+	saveids: the list of hashid of the pages that are seen by the user 
+	tag: 'save'
+	content: 'saveids'
+
+
+

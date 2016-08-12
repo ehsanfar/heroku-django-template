@@ -1,0 +1,56 @@
+
+def name_similarity(rname, neighborhood): # real name vs similar name 
+    rname = rname.lower()
+    neighborhood = neighborhood.lower()
+    N=max(len(rname),len(neighborhood))
+    Ns=[]
+    # n = 10
+    shift = range(-5, 6)
+    # shift=[-1,0,1]
+    accuracy=[]
+#     print rname, sname 
+    w1 = rname
+    w2 = neighborhood
+    for j in range(2):
+        temp = w1
+        w1 = w2
+        w2 = temp 
+
+        for i in range(len(shift)):
+            sh=shift[i]
+            sn = ''
+            if sh<0:
+                l=len(w2)
+                for i in range(len(w1)):
+                    if i>=l:
+                        break
+                    if w1[i]!=w2[i]:
+                        sn = w1[:i]+w1[i+sh:]
+                        break
+
+            elif sh>0:
+                l=len(w2)
+                for i in range(len(w1)):
+                    if i>=l:
+                        break
+                    if w1[i]!=w2[i]:
+                        sn = w1[:i]+abs(sh)*' '+w1[i:]
+                        break
+
+            else:
+                sn=w1
+
+            Ns.append(0.)
+            for i in range(min(len(w2), len(sn))): 
+                if sn[i] == w2[i]: 
+                    Ns[-1]+=1
+
+            # print sh
+            # print sn
+            # print neighborhood
+
+            accuracy.append(Ns[-1]/N)
+
+            # print accuracy[-1]
+    
+    return max(accuracy)

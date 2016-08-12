@@ -1,4 +1,4 @@
-#!/Users/aehsanfar/Documents/SUMMER/Heroku/heroku-django-template/3rdPartyListings/env/bin/python
+#!/Users/aehsanfar/Documents/SUMMER/Heroku/3rdPartyListing_LOCAL/env/bin/python
 from django.core import management
 
 if __name__ == "__main__":

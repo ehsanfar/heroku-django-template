@@ -1,0 +1,62 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+<h3>Find Listings</h3>
+<style>
+ table tr.even{
+     background: #fff;
+ }
+
+ table tr.odd{
+     background: #eeeeee;
+ }
+
+ table tr.header{
+     background: #b8d1f3;
+ }
+</style>
+
+
+<a href="/sendrequesttoanni?tag=find" class="btn btn-success btn-sm">
+    <i class="glyphicon glyphicon-plus"></i>
+    Send Find
+</a>
+
+
+
+<p>{{message}}</p>
+
+<table style="width:100%">
+    <tr class="header">
+        <td> Date & Time</td>
+        <td> ID </td>
+        <td> Price ($) </td>
+        <td> Beds </td>
+        <td> Source </td>
+        <td> Address</td>
+        <td> Neighborhood </td>
+        <td> Info & Edit </td>
+    </tr>
+
+    {% for apt in apts %}
+    <tr class="{% cycle 'even' 'odd' %}">
+        <td> {{apt.created_at}} </td>
+        <td> {{apt.hashid}} </td>
+        <td> {{apt.price}} </td>
+        <td> {{apt.bedrooms}} </td>
+        <td> <a href={{apt.url}}>{{apt.source}}</a> </td>
+        <td> {{apt.full_address}} </td>
+        <td> {{apt.neighborhood}}, {{apt.parent_neighborhood}}</td>
+        
+  <td> <a href="{{apt.image_url}}">Image</a> </td>
+  
+    </tr>
+    {% endfor %}
+</table>
+
+
+{% endblock %}

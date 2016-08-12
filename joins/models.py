@@ -7,34 +7,42 @@ from django.db import models
 #     upload = models.FileField(upload_to=user_directory_path)
     
 class Join(models.Model):
-	bedroom = models.CharField(max_length=6, null=True)
-	bathroom = models.CharField(max_length=3, null=True)
+	bedrooms = models.CharField(max_length=6, null=True)
+	bathrooms = models.CharField(max_length=4, null=True)
 	ft2 = models.IntegerField(null = True)
 	neighborhood = models.CharField(max_length=100, null=True, default='nyc')
 	price = models.IntegerField(null = True)
 	email = models.EmailField(blank = True, null = True)
 	timestamp = models.DateTimeField(auto_now_add = True, auto_now=False)
 	title = models.CharField(max_length=120, null = True, blank = True)
-	hashid = models.IntegerField(primary_key = True)
+	hashid = models.BigIntegerField(primary_key = True)
 	name = models.CharField(max_length = 30, null = True, blank = True)
-	parent_neighborhood = models.CharField(max_length=23, null=True)
+	parent_neighborhood = models.CharField(max_length=200, null=True)
 	full_address = models.CharField(max_length=100, null = True)
-	listing_type_text = models.CharField(max_length=10, default='Apartment')
+	listing_type_text = models.CharField(max_length=19, default='Apartment')
 	# created_at = models.BigIntegerField(blank = True, null = True)
-	created_at = models.CharField(max_length=30, null=True)
-	linkurl = models.CharField(max_length=200, null = True)
-	image_url = models.CharField(max_length = 200, null = True)
+	created_at = models.CharField(max_length=40, null=True)
+	url = models.CharField(max_length=250, null = True)
+	image_url = models.CharField(max_length = 250, null = True)
 	# duplicate_similarity= models.FloatField(null = True)
 	# duplicate_id = models.BigIntegerField(null = True)
-	source = models.CharField(max_length=25)# {0: 'Joinery', 1: 'craigslist', 2: 'streeteasy', 3: 'nybits', 4: 'nakedapartments'}
+	source = models.CharField(max_length=20, default = "joinery")# {0: 'Joinery', 1: 'craigslist', 2: 'streeteasy', 3: 'nybits', 4: 'nakedapartments'}
 	section = models.CharField(max_length=40, null=True)
 	excerpt = models.CharField(max_length=500, null=True)
 	isbroker = models.BooleanField(default=False)
 	isscam = models.BooleanField(default=False)
 	isemailsent = models.BooleanField(default=False)
 	hide = models.BooleanField(default=False)
-	emailtext=models.CharField(max_length=200, null = True)
+	emailtext=models.CharField(max_length=1000, null = True)
 	duplicategroupid= models.IntegerField(null = True,  default=0)
+	score = models.FloatField(null = True, default = 0)
+	views = models.IntegerField(null = True)
+	messages = models.IntegerField(null = True)
+	images = models.IntegerField(null = True)
+	slug = models.CharField(max_length = 100, null = True)
+	available_date = models.CharField(max_length = 20, null = True)
+	latitude = models.FloatField(null = True)
+	longitude = models.FloatField(null = True)
 	# sendemail = models.DateTimeField(null = True, blank = True)
 	# BED_CHOICES = (('S', 'Studio'),('1', '1 bedroom'), ('2', '2 bedrooms'), ('3', '3 bedrooms'), ('4', '4 bedrooms or more'), ('L', 'Loft'),)
 	# bedroom = models.CharField(max_length = 1, choices = BED_CHOICES, blank = True)
@@ -46,7 +54,7 @@ class Join(models.Model):
 	# available_date = models.BigIntegerField(null = True)
 	# image = 
 	# friend = models.ForeignKey("self", related_name='referral',\
-	# 									null=True, blank=True)
+	# 									null=True, blank=True)3
 	# ref_id = models.CharField(max_length=120, default='ABC', unique=True)
 	# ip_address = models.CharField(max_length=120, default='ABC')
 
@@ -59,7 +67,28 @@ class Join(models.Model):
 
 class Neighborhood(models.Model): 
 	#source : streeteasy = 2, nybits = 3, nakedapartments =4 , craigslist = 1
-	source = models.CharField(max_length=21, null = True)
-	area = models.CharField(max_length=21, null = True)
-	nid = models.CharField(max_length=21, null = True)
-	parentarea = models.CharField(max_length=21, null = True)
+	hashid = models.IntegerField(null= True, default = 0)
+	shid = models.IntegerField(null = True)
+	source = models.CharField(max_length=20, default = "joinery")
+	area = models.CharField(max_length=50)
+	nid = models.CharField(max_length=20)
+	parentarea = models.CharField(max_length=50)
+	latitude = models.FloatField(null = True, default=0.)
+	longitude = models.FloatField(null = True, default=0.)
+	updated = models.NullBooleanField(default = False)
+
+
+
+class Userhist(models.Model):
+	userid = models.BigIntegerField(null = True) 
+	seenhist = models.CharField(max_length=1000, null = True)
+	alerthist =  models.CharField(max_length=1000, null = True)
+	searchhist = models.CharField(max_length=1000, null = True)
+	savehist = models.CharField(max_length = 1000, null = True)
+
+
+
+
+
+
+

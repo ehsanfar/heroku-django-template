@@ -3,6 +3,8 @@
 
 {% block content %}
 
+
+
 <h3>CL Listings</h3>
 <style>
  table tr.even{
@@ -17,6 +19,60 @@
      background: #b8d1f3;
  }
 </style>
+
+<a href="/updateneighbors" class="btn btn-success btn-sm">
+    <i class="glyphicon glyphicon-plus"></i>
+    Update Coordinates
+</a>
+
+<a href="/updateshortneighborhoodid" class="btn btn-success btn-sm">
+    <i class="glyphicon glyphicon-plus"></i>
+    Update Neighborhood Hashid
+</a>
+
+<a href="/updateparentneighborhood" class="btn btn-success btn-sm">
+    <i class="glyphicon glyphicon-plus"></i>
+    Update Parent Neighborhood
+</a>
+
+<a href="/sendrequesttoanni" class="btn btn-success btn-sm">
+    <i class="glyphicon glyphicon-plus"></i>
+    Send Anni
+</a>
+
+<a href="/sendrequesttoanni?tag=search" class="btn btn-success btn-sm">
+    <i class="glyphicon glyphicon-plus"></i>
+    Send search 
+</a>
+<a href="/sendrequesttoanni?tag=find" class="btn btn-success btn-sm">
+    <i class="glyphicon glyphicon-plus"></i>
+    Send Find
+</a>
+
+<a href="/sendrequesttoanni?tag=alertrequest" class="btn btn-success btn-sm">
+    <i class="glyphicon glyphicon-plus"></i>
+    Send alert request 
+</a>
+
+<a href="/sendrequesttoanni?tag=alert" class="btn btn-success btn-sm">
+    <i class="glyphicon glyphicon-plus"></i>
+    Send alert 
+</a>
+<a href="/sendrequesttoanni?tag=seen" class="btn btn-success btn-sm">
+    <i class="glyphicon glyphicon-plus"></i>
+    Send seen 
+</a>
+
+<a href="/sendrequesttoanni?tag=save" class="btn btn-success btn-sm">
+    <i class="glyphicon glyphicon-plus"></i>
+    Send save 
+</a>
+
+<a href="/sendrequesttoanni?tag=listing" class="btn btn-success btn-sm">
+    <i class="glyphicon glyphicon-plus"></i>
+    Send listing 
+</a>
+
 
 <p>{{message}}</p>
 <div class="pagination">
@@ -37,16 +93,15 @@
 
 <table style="width:100%">
     <tr class="header">
-        <td> Date & Time </td>
-        <td> ID </td>
-        <td> Price ($) </td>
-        <td> Beds </td>
-        <td> Source </td>
-        <td> Dup. ID</td>
-        <td> Neighborhood </td>
-  <td>Scam? </td>
-  <td>Broker?</td>
-  <td>E-Sent?</td>
+        <td> Date & Time [<a href="?order_by=created_at">A</a>|<a href="?order_by=-created_at">D</a>]</td>
+        <td> ID [<a href="?order_by=hashid">A</a>|<a href="?order_by=-hashid">D</a>]</td>
+        <td> Price ($) [<a href="?order_by=price">A</a>|<a href="?order_by=-price">D</a>]</td>
+        <td> Beds [<a href="?order_by=bedroom">A</a>|<a href="?order_by=-bedroom">D</a>]</td>
+        <td> Source [<a href="?order_by=source">A</a>|<a href="?order_by=-source">D</a>]</td>
+        <td> Address</td>
+        <td> Neighborhood [<a href="?order_by=neighborhood">A</a>|<a href="?order_by=-neighborhood">D</a>]</td>
+  <td>latitude </td>
+  <td>longitude</td>
         <td> Info & Edit </td>
     </tr>
 
@@ -55,50 +110,19 @@
         <td> {{apt.created_at}} </td>
         <td> {{apt.hashid}} </td>
         <td> {{apt.price}} </td>
-        <td> {{apt.bedroom}} </td>
-        <td> <a href={{apt.linkurl}}>{{apt.source}}</a> </td>
-        <td> {{apt.duplicategroupid}} </td>
-        <td> {{apt.neighborhood}} </td>
-        <td> 
-      {% if not apt.isscam %}
-      <div class="btn-group">
-    <a href="/{{apt.hashid}}/setscam2" class="btn btn-primary btn-sm"></a>
-
-    {% else %}
-    <a href="/{{apt.hashid}}/setscam2" class="btn btn-danger btn-sm"></a>
-    {% endif %} 
-  </td>
-  <td>
-      {% if not apt.isbroker %}
-      <a href="/{{apt.hashid}}/setbroker2" class="btn btn-primary btn-sm"></a>
-      {% else %}
-      <a href="/{{apt.hashid}}/setbroker2" class="btn btn-danger btn-sm"></a>
-      {% endif %}
-  </td>
-  <td>
-      {% if not apt.isemailsent %}
-      <a href="/{{apt.hashid}}/setemailsent2" class="btn btn-primary btn-sm"></a>
-      {% else %}
-      <a href="/{{apt.hashid}}/setemailsent2" class="btn btn-success btn-sm"></a>
-      {% endif %}
-    
-      </div>
-  </td>
+        <td> {{apt.bedrooms}} </td>
+        <td> <a href={{apt.url}}>{{apt.source}}</a> </td>
+        <td> {{apt.full_address}} </td>
+        <td> {{apt.neighborhood}}, {{apt.parent_neighborhood}}</td>
+        <td> {{apt.latitude}} </td>
+        <td> {{apt.longitude}} </td>
+       
   <td> <a href="{{apt.image_url}}">Image</a> </td>
   
     </tr>
     {% endfor %}
 </table>
 
-<a href="/updateneighbors" class="btn btn-success btn-sm">
-    <i class="glyphicon glyphicon-plus"></i>
-    Update Neighbors
-</a>
-
-<a href="/sendrequesttoanni" class="btn btn-success btn-sm">
-    <i class="glyphicon glyphicon-plus"></i>
-    Send Anni
-</a>
 
 
 <!-- <a href="/update" class="btn btn-success btn-sm">

@@ -36,7 +36,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/Users/aehsanfar/Documents/SUMMER/Heroku/heroku-django-template/3rdPartyListings/env"
+set -gx VIRTUAL_ENV "/Users/aehsanfar/Documents/SUMMER/Heroku/3rdPartyListing_LOCAL/env"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

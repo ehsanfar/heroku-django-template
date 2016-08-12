@@ -1,0 +1,357 @@
+<!doctype html>
+<!--[if IE 8]>         <html class="no-js ie lt-ie10 lt-ie9 ie8"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js ie lt-ie10 ie9"       > <![endif]-->
+<!--[if IE 10]>         <html class="no-js ie lt-ie11 ie10"     > <![endif]-->
+<!--[if gt IE 11]><!--> <html class="no-js"                     > <!--<![endif]-->
+<head>
+    
+<title>Apartment Finder: Explore Apartments, Houses &amp; Rooms for Rent | RadPad</title>
+<meta charset="utf-8">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"ed112f9db0","applicationID":"13658099","transactionName":"cV4NRUBbDQ0HEEpfClxVAkFTUE4HCwwB","queueTime":0,"applicationTime":137,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"XAABV1RSGwIDUlRaBwgO"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{s.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(s){try{i("ierr",[s,(new Date).getTime(),!0])}catch(c){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),s=t("ee"),c=t("loader"),f=window.onerror,u=!1,d=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),u=!0)}s.on("fn-start",function(t,e,n){u&&(d+=1)}),s.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),s.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),s.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),s.on(m,function(){this.bstStart=Date.now()}),s.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,!1),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),s=t(17)(a),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){if(t[1]){var n=t[1];if("function"==typeof n){var r=c(n,"nr@wrapped",function(){return s(n,"fn-",null,n.name||"anonymous")});this.wrapped=t[1]=r}else"function"==typeof n.handleEvent&&s.inPlace(n,["handleEvent"],"fn-")}}),a.on(d+"-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",s)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",s)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function s(t,e){return e}function c(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(c(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=c(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(s(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),s=t(16),c=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","finished","addToTrace","inlineHit"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&"function"==typeof t&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;e.exports=function(t){function e(t,e,n,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof n?n(r,a):n||{}}catch(u){d([u,"",[r,a,o],s])}f(e+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(l){throw f(e+"err",[r,a,l],s),l}finally{f(e+"end",[r,a,c],s)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,u(t,nrWrapper),nrWrapper)}function n(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function f(e,n,r){if(!c){c=!0;try{t.emit(e,n,r)}catch(o){d([o,e,n,r])}c=!1}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){d([r])}for(var o in t)s.call(t,o)&&(e[o]=t[o]);return e}function d(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),e.inPlace=n,e.flag=a,e}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,a,i):i()}function n(n,r,o){t&&t(n,r,o);for(var i=e(o),a=l(n),s=a.length,c=0;c<s;c++)a[c].apply(i,r);var u=f[w[n]];return u&&u.push([v,n,r,i]),i}function d(t,e){m[t]=l(t).concat(e)}function l(t){return m[t]||[]}function p(t){return u[t]=u[t]||o(n)}function h(t,e){c(t,function(t,n){e=e||"feature",w[n]=e,e in f||(f[e]=[])})}var m={},w={},v={on:d,emit:n,get:p,listeners:l,context:e,buffer:h};return v}function i(){return new r}var a="nr@context",s=t("gos"),c=t(15),f={},u={},d=e.exports=o();d.backlog=f},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!g++){var t=y.info=NREUM.info,e=u.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){c(w,function(e,n){t[e]||(t[e]=n)});var n="https"===m.split(":")[0]||t.sslForHttp;y.proto=n?"https://":"http://",s("mark",["onload",a()],null,"api");var r=u.createElement("script");r.src=y.proto+t.agent,e.parentNode.insertBefore(r,e)}}}function o(){"complete"===u.readyState&&i()}function i(){s("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var s=t("handle"),c=t(15),f=window,u=f.document,d="addEventListener",l="attachEvent",p=f.XMLHttpRequest,h=p&&p.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:p,REQ:f.Request,EV:f.Event,PR:f.Promise,MO:f.MutationObserver},t(12);var m=""+location,w={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-963.min.js"},v=p&&h&&h[d]&&!/CriOS/.test(navigator.userAgent),y=e.exports={offset:a(),origin:m,features:{},xhrWrappable:v};u[d]?(u[d]("DOMContentLoaded",i,!1),f[d]("load",r,!1)):(u[l]("onreadystatechange",o),f[l]("onload",r)),s("mark",["firstbyte",a()],null,"api");var g=0},{}]},{},["loader",2,10,4,3]);</script>
+<link rel="shortcut icon" href="https://d35wvr8lexh22u.cloudfront.net/assets/favico/production/favicon-f8bc49fbb524e75c0a37dd0486fcae09.ico" />
+<meta http-equiv="content-language" content="en">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="description" content="Find apartments and houses for rent for free! Use Pay with RadPad to pay rent online with Apple Pay or major credit card. Landlords can post rentals for free!">
+<meta name="keywords" content="apartments for rent, craigslist apartments, find me an apartment, house for rent, homes for rent, mls, vacant, dwelling, Zillow">
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="W7PGGZVmgRzRrUf5t1PYGIqYQeMEshX4UNT73TFQF1U=" name="csrf-token" />
+
+<meta name="apple-itunes-app" content="app-id=553082951">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@radpad">
+<meta name="twitter:title" content="RadPad: Apartment Finder">
+<meta name="twitter:description" content="Named a top app by Apple and Google. Discovering a place to live has never been easier, safer and more transparent.">
+<meta name="twitter:image" content="https://www.onradpad.com/assets/logos/share-logo.png">
+
+<meta property="fb:app_id" content="333546180073685">
+<meta property="og:site_name" content="RadPad">
+<meta property="og:title" content="RadPad: Apartment Finder">
+<meta property="og:url" content="https://www.onradpad.com/apartments-for-rent">
+<meta property="og:type" content="website">
+    <meta property="og:image:url" content="https://www.onradpad.com/assets/logos/share-logo.png">
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="200" />
+<meta property="og:description" content="Named a top app by Apple and Google. Discovering a place to live has never been easier, safer and more transparent.">
+
+
+<meta name="google-site-verification" content="d9htB_0xQo84h9d3tpdOnYTumq6OnFa5Ko81w9zxObk" />
+
+    <link rel="stylesheet" type="text/css" href="/assets-v2/fonts/larsseit/larsseit.css">
+
+  <link href="https://d35wvr8lexh22u.cloudfront.net/assets/find_a_pad-da8aa595061a122c035e604ce8cb75b4.css" media="screen" rel="stylesheet" type="text/css" />
+
+<!--[if lt IE 10]>
+    <script src="/assets/_libs/worker.js"></script>
+    <script>
+        window.Worker.iframeURI = '/worker.iframe.html'
+        window.Worker.baseURI = location.href.substr(0, location.href.indexOf('/', 8));
+    </script>
+<![endif]-->
+
+<style>
+    .lt-ie10 #landing { display: none !important; }
+</style>
+
+</head>
+
+<body class="_find _find-a-pad _wide u-viewportHeight">
+
+<script>
+    var LISTING = null;
+</script>
+
+
+<div id="content-new">
+    <div id="content" class=" content-main RadPad">
+        
+
+
+<div id="app" class="u-viewportHeight-childCombinator u-overflowHidden">
+  
+</div>
+
+
+
+
+    </div>
+</div>
+<div class="f">
+    <div class="footer global-dark-footer">
+    <div class="global-dark-footer-wrapper">
+        <div class="global-footer-container">
+            <div class="footer-list-wrapper">
+                <ul class="footer-list">
+                    <li>
+                        <a href="/" class="dark-footer-logo" tabindex="-1">
+                            <svg version="1.1" id="spotlight-logo" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="21px" height="28.5px" viewBox="0 0 21 28.5" enable-background="new 0 0 21 28.5">
+                                <path d="M20,27c-0.8,0.9-1.9,1.4-3.1,1.4c-0.4,0-0.7-0.1-1.1-0.2 c0,0,0,0,0,0L2.7,24.4C1.1,24,0,22.5,0,20.8V3.7C0,1.7,1.7,0,3.8,0h5.8c4.2,0,7.8,3.1,8.4,7.1l2.9,16.5c0,0,0,0,0,0 C21.1,24.9,20.8,26.1,20,27 M16.5,20.4l-4.4-6.8C14,12.7,15,11,15,8.8c0-1.7-0.6-3.1-1.7-4.2C12.1,3.6,10.6,3,8.7,3H3.8 C3.4,3,3,3.4,3,3.8v17c0,0.4,0.4,0.8,0.8,0.8h2c0.4,0,0.7-0.3,0.7-0.8v-6.4c0.6,0,1.2,0,1.8,0c0,0,0.1,0,0.1,0l4.4,6.8 c0.1,0.2,0.4,0.3,0.6,0.3h2.3C16.4,21.6,16.8,20.9,16.5,20.4 M8.8,11.2H6.8V6.4h2.1c1.7,0,2.7,0.9,2.7,2.4 C11.6,10.4,10.5,11.2,8.8,11.2"/>
+                            </svg>
+                        </a>
+                        <p class="mobile-made show-mobile">Made in California.</p>
+                    </li>
+                    <li class="hide-mobile">
+                        <a class="js-activate-menu noselect" tabindex="-1">get the app</a>
+                        <div class="footer-more-menu get-app-menu">
+                            <ul class="more-menu-list">
+                                <li><a href="https://itunes.apple.com/us/app/radpad-coolest-apartments/id553082951?mt=8" target="_blank" tabindex="-1">iPhone App</a></li>
+                                <li><a href="https://play.google.com/store/apps/details?id=com.radpad.RadPad" target="_blank" tabindex="-1">Android App</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="hide-mobile"><a href="/jobs" rel="nofollow" tabindex="-1">jobs</a></li>
+                    <li class="hide-mobile"><a href="https://blog.onradpad.com/" tabindex="-1">blog</a></li>
+                    <li class="hide-mobile">
+                        <a class="js-activate-menu noselect" tabindex="-1">keep in touch</a>
+                        <div class="footer-more-menu in-touch-menu">
+                            <ul class="more-menu-list">
+                                <li><a href="mailto:feedback@onradpad.com" tabindex="-1">Email us</a></li>
+                                <li><a href="http://facebook.com/radpad" target="_blank" tabindex="-1">Facebook</a></li>
+                                <li><a href="http://twitter.com/radpad" target="_blank" tabindex="-1">Twitter</a></li>
+                                <li><a href="http://instagram.com/radpad" target="_blank" tabindex="-1">Instagram</a></li>
+                                <li><a href="https://www.youtube.com/channel/UCcz8FRYj4-bRvsKmuibQvGQ" target="_blank" tabindex="-1">Youtube</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="hide-mobile"><a href="https://www.onradpad.com/privacy" target="_blank" tabindex="-1">Privacy</a></li>
+                    <li class="hide-mobile"><a href="https://www.onradpad.com/terms" target="_blank" tabindex="-1">Terms</a></li>
+                    <li class="hide-mobile">
+                        <a class="more-dots dots-container js-activate-menu noselect" tabindex="-1">
+                          <span className='dots'></span>
+                          <span className='dots'></span>
+                          <span className='dots'></span>
+                        </a>
+                        <div class="footer-more-menu more-dots-menu">
+                            <ul class="more-menu-list">
+                                <li><a href="/apartments-for-rent" target="_blank" tabindex="-1">Apartments for rent</a></li>
+                                <li><a href="/houses-for-rent" target="_blank" tabindex="-1">Houses for rent</a></li>
+                                <li><a href="/rooms-for-rent" target="_blank" tabindex="-1">Rooms for rent</a></li>
+                                <li><a href="https://www.onradpad.com/ask-radpad" target="_blank" tabindex="-1">Ask RadPad</a></li>
+                                <li><a href="https://www.onradpad.com/stories" target="_blank" tabindex="-1">Renter stories</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="show-mobile pull-right">
+                        <a class="more-dots dots-container js-activate-menu noselect" tabindex="-1">
+                          <span className='dots'></span>
+                          <span className='dots'></span>
+                          <span className='dots'></span>
+                        </a>
+                        <div class="footer-more-menu more-dots-menu right-aligned-menu">
+                            <ul class="more-menu-list">
+                                <li><a href="https://itunes.apple.com/us/app/radpad-coolest-apartments/id553082951?mt=8" target="_blank" tabindex="-1">iPhone App</a></li>
+                                <li><a href="https://play.google.com/store/apps/details?id=com.radpad.RadPad" target="_blank" tabindex="-1">Android App</a></li>
+                                <li><a href="/jobs" rel="nofollow" tabindex="-1">Jobs</a></li>
+                                <li><a href="https://blog.onradpad.com/" tabindex="-1">Blog</a></li>
+                                <li><a href="https://www.onradpad.com/privacy" target="_blank" tabindex="-1">Privacy</a></li>
+                                <li><a href="https://www.onradpad.com/terms" target="_blank" tabindex="-1">Terms</a></li>
+                                <li><a href="https://www.onradpad.com/ask-radpad" target="_blank" tabindex="-1">Ask RadPad</a></li>
+                                <li><a href="https://www.onradpad.com/stories" target="_blank" tabindex="-1">Renter Stories</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="global-footer-right-block hide-mobile">
+                <p><span class="registered">&#174;</span>RadPad. <span class="hide-tablet">Made in California.</span> <span class="california-white"></span></p>
+            </div>
+            <div class="mobile-share-icons-wrapper show-mobile">
+                <ul class="mobile-share-icon-list">
+                    <li class="mobile-share-icon mail"><a href="mailto:feedback@onradpad.com" tabindex="-1">Email us</a></li>
+                    <li class="mobile-share-icon facebook"><a href="http://facebook.com/radpad" target="_blank" tabindex="-1">Facebook</a></li>
+                    <li class="mobile-share-icon twitter"><a href="http://twitter.com/radpad" target="_blank" tabindex="-1">Twitter</a></li>
+                    <li class="mobile-share-icon instagram"><a href="http://instagram.com/radpad" target="_blank" tabindex="-1">Instagram</a></li>
+                    <li class="mobile-share-icon youtube"><a href="https://www.youtube.com/channel/UCcz8FRYj4-bRvsKmuibQvGQ" target="_blank" tabindex="-1">Youtube</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+<script src="https://d35wvr8lexh22u.cloudfront.net/assets/headV2-55ff84920a8d50d60b3b193d9a2c3814.js" type="text/javascript"></script>
+<div id="fb-root"></div>
+<!--[if lt IE 9]>
+<script src="/assets/_plugins/html5shiv.js"></script>
+<script src="/assets/_plugins/es5-shim.js"></script>
+<script>
+  var e = ("abbr,article,aside,audio,canvas,datalist,details," +
+    "figure,footer,header,hgroup,mark,menu,meter,nav,output," +
+    "progress,section,time,video").split(',');
+  for (var i = 0; i < e.length; i++) {
+    document.createElement(e[i]);
+  }
+</script>
+<![endif]-->
+
+<!-- Google Code for Remarketing Tag -->
+<!--
+Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
+-->
+<script type="text/javascript">
+  /* <![CDATA[ */
+var google_tag_params ={ utm_source: "adwords" };
+var google_conversion_id = 959575087;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<noscript>
+  <div style="display:inline;">
+    <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/959575087/?value=0&amp;guid=ON&amp;script=0"/>
+  </div>
+</noscript>
+
+
+<script type="text/javascript">
+  // **********************************************************************
+  // LOAD SCRIPTS
+  // scripts that should manipulate the DOM before waiting for the rest of
+  // the call stack to load
+  // **********************************************************************
+
+var FACEBOOK_APP_ID = '333546180073685';
+var FACEBOOK_PERMS = 'email,user_friends,user_education_history';
+var CATEGORIES = {"0":"House","1":"Apartment","2":"Apartment","3":"Roommate"};
+var LANDLORD_TITLES = {"0":"Landlord","1":"Realtor","2":"Broker","3":"Leasing Agent"};
+var LISTHUB_PROVIDER_ID = 'M-1711';
+var LISTHUB_TEST = false;
+var DEFAULT_LOCATION = {};
+var PUSHER_API_KEY = '0f758661099d1bda5b9c';
+var SHOW_INBOX = false;
+var SHOW_THREAD_ID = 0;
+var APP_CONFIG = {
+    environment: "production",
+    cloudant_url: "https://radpad.cloudant.com/listings_production",
+    cloudant_proxy_url: "",
+    facebook_api_id: "333546180073685",
+    radpad_api_url: "https://api.onradpad.com",
+    listhub_provider_id: "M-1711",
+    listhub_test: "false",
+    pusher_api_key: "0f758661099d1bda5b9c",
+    stripe_api_key: "",
+    listing_categories: {"0":"House","1":"Apartment","2":"Apartment","3":"Roommate"},
+    city: "New York",
+    streetPin: "https://d35wvr8lexh22u.cloudfront.net/assets/icons/markers/g_pin_pad-9da0151b16dd35209a718ec44b4a6532.png",
+    favorite_listings_metro_likes_count: null,
+    favorite_listings_metro_likes_users: null,
+    workers: {
+      'fap-mapclustering': "/assets/workers/fap-mapclustering-b23006bf6b434ac2bc96e513a0e62bba.js",
+      'fap-filters': "/assets/workers/fap-filters-1f619342f8c5c7f2030aee5b273f8707.js",
+      'fap-search': "/assets/workers/fap-search-1b289ca74f748c12336ced7a84a27c04.js"
+    },
+    api_clustering_url: "https://api.onradpad.com/listings/clusters.json",
+    api_feed_url: "https://api.onradpad.com/listings/search.json",
+    search_coords: null,
+    search_city: null,
+    spammy_email_domains: ["yopmail.com", "mailinator.com", "yandex.com", "zoho.com", "thrma.com", "sharklasers.com", "grr.la", "spam4.me", "maildrop.cc", "vomoto.com", "trbvm.com", "mailcatch.com", "mailnesia.com", "ce.mintemail.com", "trashmail.ws", "inboxstore.me", "fakeinbox.com", "mailfs.com", "one-time.email"],
+    profile_answers: {"moving_timeframe":[{"id":"0","text":"I need to move right now!"},{"id":"1","text":"I'll move when I find the right place"},{"id":"2","text":"I'm just casually looking"}],"renting_timeframe":[{"id":"0","text":"About a year"},{"id":"1","text":"Probably 2 years"},{"id":"2","text":"More than 3 years"}],"pet_type":[{"id":"1","text":"Dog"},{"id":"2","text":"Cat"},{"id":"0","text":"No Pets"}],"pet_size":[{"id":"0","text":"Small"},{"id":"1","text":"Medium"},{"id":"2","text":"Large"}],"roommate_type":[{"id":"0","text":"I'll be living alone"},{"id":"1","text":"I'll be living with a roommate"},{"id":"2","text":"I'll be living with my partner"}],"has_kids":[{"id":"0","text":"Nope"},{"id":"1","text":"Yeah! They're great"}],"smoker_type":[{"id":"0","text":"No, not at all"},{"id":"1","text":"Only when I'm drinking"},{"id":"2","text":"You betcha I smoke"}]},
+    first_to_know: {
+      max_search_radius: 3,
+      max_price_range: 250,
+      max_category_selection: 2,
+      max_bed_selection: 2,
+      max_bath_selection: 2,
+      min_bed_selection: 1,
+      min_bath_selection: 1,
+      min_category_selection: 1,
+      advantage_hours: 4
+    },
+    credit_report: {"average_credit_score":640,"credit_score_max":850,"credit_score_low_endpoints":{"very_poor":300,"poor":580,"fair":640,"good":700,"excellent":750},"credit_utilization_low_endpoints":{"very_poor":75.0,"poor":50.0,"fair":30.0,"good":10.0,"excellent":0.0},"credit_history_age_low_endpoints":{"very_poor":0.0,"poor":2.0,"fair":5.0,"good":7.0,"excellent":9.0},"payment_history_low_endpoints":{"very_poor":0,"poor":97.0,"fair":98.0,"good":99.0,"excellent":100.0},"derogatory_marks_low_endpoints":{"very_poor":4,"poor":2,"fair":1,"excellent":0},"credit_inquiries_low_endpoints":{"very_poor":9,"poor":5,"fair":3,"good":1,"excellent":0}},
+    plaid_public_key: "ec0e97d25a419f58b399a6f87b38de",
+    plaid_environment: "production",
+    payment_preferences: {"max_amount":10000,"min_amount":200,"debit_fee":0.0,"debit_fees":{"4999":"0.00","10000":"9.95"},"credit_fee":"3.49","special_credit_card_fees":{"master_card":"","visa":"","amex":"","discover":""},"min_due_date":null,"min_app_version":{"ios":"3.0","android":"1.0.0"}},
+    videos: [{"mp4_url":"https://d35wvr8lexh22u.cloudfront.net/videos/homepage/chicago/video_home_chi_loop_2016.mp4","webm_url":"https://d35wvr8lexh22u.cloudfront.net/videos/homepage/chicago/video_home_chi_loop_2016.webm","poster":"https://d35wvr8lexh22u.cloudfront.net/videos/homepage/chicago/video_home_chi_loop_2016.jpg","drone_number":3,"location":"Chicago, IL","location_url":"/apartments-for-rent/chicago-il"},{"mp4_url":"https://d35wvr8lexh22u.cloudfront.net/videos/homepage/chicago/video_home_chi_north_2016.mp4","webm_url":"https://d35wvr8lexh22u.cloudfront.net/videos/homepage/chicago/video_home_chi_north_2016.webm","poster":"https://d35wvr8lexh22u.cloudfront.net/videos/homepage/chicago/video_home_chi_north_2016.jpg","drone_number":3,"location":"Chicago, IL","location_url":"/apartments-for-rent/chicago-il"},{"mp4_url":"https://d35wvr8lexh22u.cloudfront.net/videos/homepage/chicago/video_home_chi_south_2016.mp4","webm_url":"https://d35wvr8lexh22u.cloudfront.net/videos/homepage/chicago/video_home_chi_south_2016.webm","poster":"https://d35wvr8lexh22u.cloudfront.net/videos/homepage/chicago/video_home_chi_south_2016.jpg","drone_number":3,"location":"Chicago, IL","location_url":"/apartments-for-rent/chicago-il"},{"mp4_url":"https://d35wvr8lexh22u.cloudfront.net/videos/homepage/chicago/video_home_chi_west_2016.mp4","webm_url":"https://d35wvr8lexh22u.cloudfront.net/videos/homepage/chicago/video_home_chi_west_2016.webm","poster":"https://d35wvr8lexh22u.cloudfront.net/videos/homepage/chicago/video_home_chi_west_2016.jpg","drone_number":3,"location":"Chicago, IL","location_url":"/apartments-for-rent/chicago-il"},{"mp4_url":"https://d35wvr8lexh22u.cloudfront.net/videos/homepage/la/video_home_ela_2016.mp4","webm_url":"https://d35wvr8lexh22u.cloudfront.net/videos/homepage/la/video_home_ela_2016.webm","poster":"https://d35wvr8lexh22u.cloudfront.net/videos/homepage/la/video_home_ela_2016.jpg","drone_number":1,"location":"Los Angeles, CA","location_url":"/apartments-for-rent/los-angeles-ca"},{"mp4_url":"https://d35wvr8lexh22u.cloudfront.net/videos/homepage/la/video_home_sm_2016.mp4","webm_url":"https://d35wvr8lexh22u.cloudfront.net/videos/homepage/la/video_home_sm_2016.webm","poster":"https://d35wvr8lexh22u.cloudfront.net/videos/homepage/la/video_home_sm_2016.jpg","drone_number":2,"location":"Santa Monica, CA","location_url":"/apartments-for-rent/santa-monica-ca"},{"mp4_url":"https://d35wvr8lexh22u.cloudfront.net/videos/homepage/la/video_home_venice_2016.mp4","webm_url":"https://d35wvr8lexh22u.cloudfront.net/videos/homepage/la/video_home_venice_2016.webm","poster":"https://d35wvr8lexh22u.cloudfront.net/videos/homepage/la/video_home_venice_2016.jpg","drone_number":2,"location":"Venice, CA","location_url":"/apartments-for-rent/venice-ca"}],
+    amenities: {"balcony":{"title":"Balcony","bonus":false,"description_for_landlord":null,"description_for_renter":null},"dishwasher":{"title":"Dishwasher","bonus":false,"description_for_landlord":null,"description_for_renter":null},"fridge":{"title":"Fridge","bonus":false,"description_for_landlord":null,"description_for_renter":null},"fireplace":{"title":"Fireplace","bonus":false,"description_for_landlord":null,"description_for_renter":null},"gym":{"title":"Gym","bonus":false,"description_for_landlord":null,"description_for_renter":null},"hardwood_floors":{"title":"Hardwood floors","bonus":false,"description_for_landlord":null,"description_for_renter":null},"utilities_included":{"title":"Utilities included","bonus":false,"description_for_landlord":null,"description_for_renter":null},"bbq":{"title":"BBQ","bonus":true,"description_for_landlord":null,"description_for_renter":null},"central_air":{"title":"Central air","bonus":false,"description_for_landlord":null,"description_for_renter":null},"pay_with_radpad":{"title":"Pay with RadPad","bonus":false,"description_for_landlord":null,"description_for_renter":null},"pool_or_hot_tub":{"title":"Pool or hot tub","bonus":false,"description_for_landlord":null,"description_for_renter":null},"security_system":{"title":"Security system","bonus":false,"description_for_landlord":null,"description_for_renter":null},"luxe_valet":{"title":"Parking available","bonus":true,"description_for_landlord":"","description_for_renter":"RadPad is partnered with Luxe Valet to offer you discounted on-demand valet parking services at this address. Don't worry about finding a parking spot because Luxe Valet has you covered."},"entertainment_package":{"title":"Entertainment package","bonus":true,"description_for_landlord":"Select this if the pad comes with any of the following: Apple TV, Roku, DirecTV, Movie Theater","description_for_renter":"This pad comes with at least one of the following: Apple TV, Roku, DirecTv, Movie Theater"},"upgraded_bathroom":{"title":"Upgraded bathroom","bonus":true,"description_for_landlord":"Select this if the bathroom has been upgraded in the last 12-months","description_for_renter":"The bathroom has been upgraded within the last 12 months"},"furnished":{"title":"Furnished","bonus":false,"description_for_landlord":null,"description_for_renter":null},"top_floor_unit":{"title":"Top floor unit","bonus":false,"description_for_landlord":null,"description_for_renter":null},"washer_and_dryer_in_unit":{"title":"Washer & dryer in unit","bonus":false,"description_for_landlord":null,"description_for_renter":null},"parking_spot":{"title":"Parking spot","bonus":false,"description_for_landlord":null,"description_for_renter":null},"industrial_vibe":{"title":"Industrial vibe","bonus":true,"description_for_landlord":"Select this if the pad has concrete floors, brick walls and that industrial look that's so popular these days","description_for_renter":"This pad has concrete floors, brick walls and exposed ceilings which give it a very industrial modern vibe"},"wifi":{"title":"WiFi","bonus":true,"description_for_landlord":"Select this if the place comes with free WiFi","description_for_renter":"This place includes free WiFi access"},"upgraded_kitchen":{"title":"Upgraded kitchen","bonus":true,"description_for_landlord":"Select this if the kitchen has been upgraded in the last 12-months","description_for_renter":"The kitchen has been upgraded within the last 12 months"},"connected_home":{"title":"Connected home","bonus":true,"description_for_landlord":"Select this if the pad comes with any of the following: Nest Thermostat, Sonos System or equivalent","description_for_renter":"This pad comes with a Nest Home Thermostat, Sonos System or equivalent"},"soundproofed_walls":{"title":"Soundproof walls","bonus":true,"description_for_landlord":"Select this if you've added special soundproofing that blocks the sounds from neighbors and the outside world","description_for_renter":"This pad comes with special soundproofing so you never ever have to hear those annoying neighbors or anything going on outside"}}
+};
+</script>
+
+
+<!--
+  MAIN JS FILES
+  conditionally async
+-->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://d35wvr8lexh22u.cloudfront.net/assets-v2/build/js/libs.8b229675.js"></script>
+  <script src="https://d35wvr8lexh22u.cloudfront.net/assets-v2/build/js/external.20d0a32a.js"></script>
+    <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyAuSgy1e6qqDCpico3nLh6j1IsoyRH8GWQ&libraries=geometry,places"></script>
+
+    <script src="https://d35wvr8lexh22u.cloudfront.net/assets-v2/build/js/index.cf9df826.js"></script>
+    <script>
+      var index = require('index');
+      var props = {
+          configData: {"environment":"production","cloudant_url":"https://radpad.cloudant.com/listings_production","cloudant_proxy_url":null,"facebook_api_id":"333546180073685","radpad_api_url":"https://api.onradpad.com","listhub_provider_id":"M-1711","listhub_test":false,"pusher_api_key":"0f758661099d1bda5b9c","stripe_api_key":null,"listing_categories":{"0":"House","1":"Apartment","2":"Apartment","3":"Roommate"},"listing_packages":{"premier":{"cost":199.0,"call_to_action":"Upgrade to Premier","discount":0.3,"sub_text":"Get everything + priority phone support until your pad is rented","features":[{"text":"Feature your apartment"},{"text":"Syndicate your listing"},{"text":"Professional photos"},{"text":"Hide your address"},{"text":"Bonus: priority phone support"}],"products":["feature_listing","syndicate_listing","photos","hidden_address"]},"premier_no_photo":{"cost":149.0,"call_to_action":"Upgrade to Premier","discount":0.2,"sub_text":"Get everything + priority phone support until your pad is rented","features":[{"text":"Feature your apartment"},{"text":"Syndicate your listing"},{"text":"Hide your address"},{"text":"Bonus: priority phone support"}],"products":["feature_listing","syndicate_listing","hidden_address"]}},"listing_subscriptions":[{"id":1,"key":"feature_listing","name":"Feature your apartment!","description":"Don't wait for renters to find you! Feature your apartment at the top of search results, guaranteeing renters see your place.","options":[{"key":"week","description":"Feature for 1 week","cost":0.0},{"key":"unlimited","description":"Feature until my pad is rented","cost":50.0}],"cost":49.0,"sort_order":1},{"id":2,"key":"syndicate_listing","name":"Syndicate your listing","description":"Syndicate your listing so it appears on more rental sites. Guaranteed to increase applicants.","options":[],"cost":49.0,"sort_order":2},{"id":3,"key":"photos","name":"Upgrade to professional photos","description":"Listings with professional photos get 40% more applicants. Professional photos are taken and added to your listing within 72 hours.","options":[],"cost":99.0,"sort_order":3},{"id":4,"key":"hidden_address","name":"Hide your pad's address","description":"Keep your pad's address private. Renters see an approximate area instead of the actual address.","options":[],"cost":25.0,"sort_order":4}],"favorite_listings_metro_likes_count":"null","favorite_listings_metro_likes_users":"null","first_to_know":{"max_search_radius":3,"max_price_range":250,"max_category_selection":2,"max_bed_selection":2,"max_bath_selection":2,"min_bed_selection":1,"min_bath_selection":1,"min_category_selection":1,"advantage_hours":4},"credit_report":{"average_credit_score":640,"credit_score_max":850,"credit_score_low_endpoints":{"very_poor":300,"poor":580,"fair":640,"good":700,"excellent":750},"credit_utilization_low_endpoints":{"very_poor":75.0,"poor":50.0,"fair":30.0,"good":10.0,"excellent":0.0},"credit_history_age_low_endpoints":{"very_poor":0.0,"poor":2.0,"fair":5.0,"good":7.0,"excellent":9.0},"payment_history_low_endpoints":{"very_poor":0,"poor":97.0,"fair":98.0,"good":99.0,"excellent":100.0},"derogatory_marks_low_endpoints":{"very_poor":4,"poor":2,"fair":1,"excellent":0},"credit_inquiries_low_endpoints":{"very_poor":9,"poor":5,"fair":3,"good":1,"excellent":0}},"videos":[{"mp4_url":"https://d35wvr8lexh22u.cloudfront.net/videos/homepage/chicago/video_home_chi_loop_2016.mp4","webm_url":"https://d35wvr8lexh22u.cloudfront.net/videos/homepage/chicago/video_home_chi_loop_2016.webm","poster":"https://d35wvr8lexh22u.cloudfront.net/videos/homepage/chicago/video_home_chi_loop_2016.jpg","drone_number":3,"location":"Chicago, IL","location_url":"/apartments-for-rent/chicago-il"},{"mp4_url":"https://d35wvr8lexh22u.cloudfront.net/videos/homepage/chicago/video_home_chi_north_2016.mp4","webm_url":"https://d35wvr8lexh22u.cloudfront.net/videos/homepage/chicago/video_home_chi_north_2016.webm","poster":"https://d35wvr8lexh22u.cloudfront.net/videos/homepage/chicago/video_home_chi_north_2016.jpg","drone_number":3,"location":"Chicago, IL","location_url":"/apartments-for-rent/chicago-il"},{"mp4_url":"https://d35wvr8lexh22u.cloudfront.net/videos/homepage/chicago/video_home_chi_south_2016.mp4","webm_url":"https://d35wvr8lexh22u.cloudfront.net/videos/homepage/chicago/video_home_chi_south_2016.webm","poster":"https://d35wvr8lexh22u.cloudfront.net/videos/homepage/chicago/video_home_chi_south_2016.jpg","drone_number":3,"location":"Chicago, IL","location_url":"/apartments-for-rent/chicago-il"},{"mp4_url":"https://d35wvr8lexh22u.cloudfront.net/videos/homepage/chicago/video_home_chi_west_2016.mp4","webm_url":"https://d35wvr8lexh22u.cloudfront.net/videos/homepage/chicago/video_home_chi_west_2016.webm","poster":"https://d35wvr8lexh22u.cloudfront.net/videos/homepage/chicago/video_home_chi_west_2016.jpg","drone_number":3,"location":"Chicago, IL","location_url":"/apartments-for-rent/chicago-il"},{"mp4_url":"https://d35wvr8lexh22u.cloudfront.net/videos/homepage/la/video_home_ela_2016.mp4","webm_url":"https://d35wvr8lexh22u.cloudfront.net/videos/homepage/la/video_home_ela_2016.webm","poster":"https://d35wvr8lexh22u.cloudfront.net/videos/homepage/la/video_home_ela_2016.jpg","drone_number":1,"location":"Los Angeles, CA","location_url":"/apartments-for-rent/los-angeles-ca"},{"mp4_url":"https://d35wvr8lexh22u.cloudfront.net/videos/homepage/la/video_home_sm_2016.mp4","webm_url":"https://d35wvr8lexh22u.cloudfront.net/videos/homepage/la/video_home_sm_2016.webm","poster":"https://d35wvr8lexh22u.cloudfront.net/videos/homepage/la/video_home_sm_2016.jpg","drone_number":2,"location":"Santa Monica, CA","location_url":"/apartments-for-rent/santa-monica-ca"},{"mp4_url":"https://d35wvr8lexh22u.cloudfront.net/videos/homepage/la/video_home_venice_2016.mp4","webm_url":"https://d35wvr8lexh22u.cloudfront.net/videos/homepage/la/video_home_venice_2016.webm","poster":"https://d35wvr8lexh22u.cloudfront.net/videos/homepage/la/video_home_venice_2016.jpg","drone_number":2,"location":"Venice, CA","location_url":"/apartments-for-rent/venice-ca"}],"api_clustering_url":"https://api.onradpad.com/listings/clusters.json","api_feed_url":"https://api.onradpad.com/listings/search.json","profile_answers":{"moving_timeframe":[{"id":"0","text":"I need to move right now!"},{"id":"1","text":"I'll move when I find the right place"},{"id":"2","text":"I'm just casually looking"}],"renting_timeframe":[{"id":"0","text":"About a year"},{"id":"1","text":"Probably 2 years"},{"id":"2","text":"More than 3 years"}],"pet_type":[{"id":"1","text":"Dog"},{"id":"2","text":"Cat"},{"id":"0","text":"No Pets"}],"pet_size":[{"id":"0","text":"Small"},{"id":"1","text":"Medium"},{"id":"2","text":"Large"}],"roommate_type":[{"id":"0","text":"I'll be living alone"},{"id":"1","text":"I'll be living with a roommate"},{"id":"2","text":"I'll be living with my partner"}],"has_kids":[{"id":"0","text":"Nope"},{"id":"1","text":"Yeah! They're great"}],"smoker_type":[{"id":"0","text":"No, not at all"},{"id":"1","text":"Only when I'm drinking"},{"id":"2","text":"You betcha I smoke"}]},"rental_application_answers":{"roommate_type":[{"id":"me","text":"Just me"},{"id":"partner","text":"Me and my partner"},{"id":"one_roommate","text":"Me and 1 roommate"},{"id":"two_roommate","text":"Me and 2 roommates"},{"id":"three_roommate","text":"Me and 3 roommates"}],"application_roommate_type":[{"id":"me","text":"no roommates"},{"id":"partner","text":"my partner"},{"id":"one_roommate","text":"a roommate"},{"id":"two_roommate","text":"2 roommates"},{"id":"three_roommate","text":"3 roommates"}]},"amenities":{"balcony":{"title":"Balcony","bonus":false,"description_for_landlord":null,"description_for_renter":null},"dishwasher":{"title":"Dishwasher","bonus":false,"description_for_landlord":null,"description_for_renter":null},"fridge":{"title":"Fridge","bonus":false,"description_for_landlord":null,"description_for_renter":null},"fireplace":{"title":"Fireplace","bonus":false,"description_for_landlord":null,"description_for_renter":null},"gym":{"title":"Gym","bonus":false,"description_for_landlord":null,"description_for_renter":null},"hardwood_floors":{"title":"Hardwood floors","bonus":false,"description_for_landlord":null,"description_for_renter":null},"utilities_included":{"title":"Utilities included","bonus":false,"description_for_landlord":null,"description_for_renter":null},"bbq":{"title":"BBQ","bonus":true,"description_for_landlord":null,"description_for_renter":null},"central_air":{"title":"Central air","bonus":false,"description_for_landlord":null,"description_for_renter":null},"pay_with_radpad":{"title":"Pay with RadPad","bonus":false,"description_for_landlord":null,"description_for_renter":null},"pool_or_hot_tub":{"title":"Pool or hot tub","bonus":false,"description_for_landlord":null,"description_for_renter":null},"security_system":{"title":"Security system","bonus":false,"description_for_landlord":null,"description_for_renter":null},"luxe_valet":{"title":"Parking available","bonus":true,"description_for_landlord":"","description_for_renter":"RadPad is partnered with Luxe Valet to offer you discounted on-demand valet parking services at this address. Don't worry about finding a parking spot because Luxe Valet has you covered."},"entertainment_package":{"title":"Entertainment package","bonus":true,"description_for_landlord":"Select this if the pad comes with any of the following: Apple TV, Roku, DirecTV, Movie Theater","description_for_renter":"This pad comes with at least one of the following: Apple TV, Roku, DirecTv, Movie Theater"},"upgraded_bathroom":{"title":"Upgraded bathroom","bonus":true,"description_for_landlord":"Select this if the bathroom has been upgraded in the last 12-months","description_for_renter":"The bathroom has been upgraded within the last 12 months"},"furnished":{"title":"Furnished","bonus":false,"description_for_landlord":null,"description_for_renter":null},"top_floor_unit":{"title":"Top floor unit","bonus":false,"description_for_landlord":null,"description_for_renter":null},"washer_and_dryer_in_unit":{"title":"Washer & dryer in unit","bonus":false,"description_for_landlord":null,"description_for_renter":null},"parking_spot":{"title":"Parking spot","bonus":false,"description_for_landlord":null,"description_for_renter":null},"industrial_vibe":{"title":"Industrial vibe","bonus":true,"description_for_landlord":"Select this if the pad has concrete floors, brick walls and that industrial look that's so popular these days","description_for_renter":"This pad has concrete floors, brick walls and exposed ceilings which give it a very industrial modern vibe"},"wifi":{"title":"WiFi","bonus":true,"description_for_landlord":"Select this if the place comes with free WiFi","description_for_renter":"This place includes free WiFi access"},"upgraded_kitchen":{"title":"Upgraded kitchen","bonus":true,"description_for_landlord":"Select this if the kitchen has been upgraded in the last 12-months","description_for_renter":"The kitchen has been upgraded within the last 12 months"},"connected_home":{"title":"Connected home","bonus":true,"description_for_landlord":"Select this if the pad comes with any of the following: Nest Thermostat, Sonos System or equivalent","description_for_renter":"This pad comes with a Nest Home Thermostat, Sonos System or equivalent"},"soundproofed_walls":{"title":"Soundproof walls","bonus":true,"description_for_landlord":"Select this if you've added special soundproofing that blocks the sounds from neighbors and the outside world","description_for_renter":"This pad comes with special soundproofing so you never ever have to hear those annoying neighbors or anything going on outside"}},"city":"New York","streetPin":"/assets/icons/markers/g_pin_pad-9da0151b16dd35209a718ec44b4a6532.png","search_coords":"null","search_city":"null","spammy_email_domains":"[\"yopmail.com\", \"mailinator.com\", \"yandex.com\", \"zoho.com\", \"thrma.com\", \"sharklasers.com\", \"grr.la\", \"spam4.me\", \"maildrop.cc\", \"vomoto.com\", \"trbvm.com\", \"mailcatch.com\", \"mailnesia.com\", \"ce.mintemail.com\", \"trashmail.ws\", \"inboxstore.me\", \"fakeinbox.com\", \"mailfs.com\", \"one-time.email\"]"},
+          userData: {"user":{"address_history":[],"admin":false,"allow_rate_radpad_feedback":true,"allow_renter_feedback":false,"auth_token":null,"authentication_token":null,"bio":null,"communication_preferences":{"pad_alerts":false},"connected_to_facebook?":false,"created_at":"2016-08-04T09:50:20-07:00","credit_score":null,"eviction_count":null,"criminal_count":null,"current_sign_in_ip":null,"current_city":null,"current_state":null,"default_url_slug":null,"deleted":false,"display_los_angeles_private_invite":false,"display_profile_image_url":"https://d35wvr8lexh22u.cloudfront.net/assets/profile/renter_avatar_300-90f0406348f3209cab9836c26718cb5e.png","drivetime_city":null,"drivetime_latitude":"","drivetime_longitude":"","drivetime_state":null,"drivetime_street":null,"drivetime_zipcode":null,"duplicate_phone_number":false,"ein":null,"electronic_connected":false,"email":null,"email_verified":false,"facebook_oauth_access_token":"","facebook_id":null,"fb_profile_image":null,"facebook_profile_url":null,"favorites_count":0,"features":["roommates"],"first_name":"","first_to_know":null,"fraud":false,"guest":true,"has_photo":false,"has_threads":false,"hide_email":false,"id":6166629,"identifier":null,"inactive_listings_count":null,"income_verification_status":null,"job_title":null,"jumio_submitted":false,"kba_verification":{"step1_finished":false,"step2_finished":false,"pass":false,"attempt_count":0},"landlord":false,"landlord?":false,"landlord_unread_threads_count":0,"last_login_timestamp":null,"last_name":"","last_sign_in_ip":null,"linkedin_id":null,"linkedin_profile_url":null,"marketing_identifier":null,"pad_alerts":{"enabled":false,"instant":false},"phone":"","phone_verified":false,"post_likes_to_facebook":false,"profile_completeness":0.0,"profile_photo_display":"https://d35wvr8lexh22u.cloudfront.net/assets/profile/renter_avatar_300-90f0406348f3209cab9836c26718cb5e.png","registration_date":null,"renter_unread_threads_count":0,"rp_verified":false,"rp_verified_notified":false,"search_filters":{"sync_search_filters":null,"filter_source":""},"settings":{"global":{"create_listing_radius":200}},"unread_threads_count":0,"updated_at":"2016-08-04T09:50:20-07:00","url_slug":null,"verified":false,"verified_to_list":false,"work_history":[],"radpad_one_filter":null,"background_report_state":null,"viewed_profile_onboarding":null,"facebook_friend_count":null,"rental_application_defaults":{"earliest_move_in_date":null,"roommate_type":null,"pet_size":null,"pet_name":null,"pet_type":null}}},
+          listingsData: null
+      };
+      index({props: props});
+    </script>
+
+    <script async defer src="//d3dy5gmtp8yhk7.cloudfront.net/2.1/pusher.min.js"></script>
+<script>
+(function(fn){
+    if (window.__DEFER_MODULE_LOADING) {
+      return window.__DEFER_CALLBACK(function() {
+        return fn(require('jquery'));
+      });
+    }
+    return fn(
+      typeof require === 'function' ?
+        require('jquery') :
+        jQuery
+    );
+}(function($){
+    $('.global-dark-footer').show();
+    var body = $('body');
+    var showMore = $('.js-activate-menu');
+    var actionEvent = $('html').hasClass('touch') ? 'touchend' : 'click';
+    var removeClasses = function() {
+        if ( showMore.parent().hasClass('active') ){
+            showMore.parent().removeClass('active');
+        };
+    }
+    var flag = false;
+    showMore.on(actionEvent, function(e) {
+        if ( !$(e.target).parent().hasClass('active') ) {
+            e.stopPropagation();
+            removeClasses();
+            $(this).parent().addClass('active');
+        }
+        flag = true;
+    });
+    body.on(actionEvent, function(e) {
+        if (flag && !$(e.target).is('.more-menu-list li a') ) {
+            removeClasses();
+            flag = false;
+        }
+    });
+}));
+</script>
+
+
+<!-- segment.io DEFERRED -->
+<script type="text/javascript">
+    !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
+    analytics.load('ANYPf8p8W2hG2AM2Sm79MwRw48kZzwpL');
+    analytics.page();
+    }}();
+</script>
+
+<!-- Conversion.js DEFERRED -->
+<script defer async type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+
+<!-- GTM DEFERRED -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-W33RTZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W33RTZ');</script>
+
+
+</body>
+</html>

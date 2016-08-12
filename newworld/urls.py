@@ -33,8 +33,11 @@ urlpatterns = [
     url(r'^(?P<page_id>[0-9]{18})/setemailsent2/', joins.views.setemailsent2, name='setemailsent'),
     url(r'^(?P<page_id>[0-9]{18})/setbroker2/', joins.views.setbroker2, name='setbroker2'),
     url(r'^search/', joins.views.search, name='search'),
-    url(r'^updateneighbors/', joins.views.updateneighbors, name='search'),
-    url(r'^sendrequesttoanni/', joins.views.sendrequesttoanni, name='search'),
+    url(r'^updateneighbors/', joins.views.updateneighbors, name='neighbors'),
+    url(r'^updateshortneighborhoodid/', joins.views.updateshortneighborhoodid, name='hashids'),
+    url(r'^updateparentneighborhood/', joins.views.updateparentneighborhood, name='parentneighb'),
+    url(r'^sendrequesttoanni.*/', joins.views.sendrequesttoanni, name='sendrequest'),
     url(r'^admin/', admin.site.urls),
     url(r'^(?P<page_id>[0-9]{18})/$', joins.views.apt),
+    url(r'^find/', joins.views.find, name='find'),
 ]

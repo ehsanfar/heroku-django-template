@@ -40,7 +40,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/Users/aehsanfar/Documents/SUMMER/Heroku/heroku-django-template/3rdPartyListings/env"
+VIRTUAL_ENV="/Users/aehsanfar/Documents/SUMMER/Heroku/3rdPartyListing_LOCAL/env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
